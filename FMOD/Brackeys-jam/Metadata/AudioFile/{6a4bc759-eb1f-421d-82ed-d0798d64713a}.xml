@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{6a4bc759-eb1f-421d-82ed-d0798d64713a}">
+        <property name="assetPath">
+            <value>BrackeysJam_BarGame_Track01_RestaurantPiano.ogg</value>
+        </property>
+        <property name="isStreaming">
+            <value>true</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>44.0999985</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>182.43383219954649</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{cd4e8f8a-39cc-4a54-934e-965178f0e65a}</destination>
+        </relationship>
+    </object>
+</objects>

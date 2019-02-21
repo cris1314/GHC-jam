@@ -13,13 +13,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 114013412804521040}
-  - {fileID: 114586374013919482}
+  - {fileID: 114450387046473048}
   EditorEvents: []
   MasterBanks:
   - {fileID: 114586374013919482}
+  - {fileID: 114450387046473048}
   StringsBanks:
   - {fileID: 114013412804521040}
-  stringsBankWriteTime: 636858777461863283
+  stringsBankWriteTime: 636859235338249757
   cacheVersion: 3
 --- !u!114 &114013412804521040
 MonoBehaviour:
@@ -33,11 +34,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: FMOD\Brackeys-jam\Build\Desktop\Master Bank.strings.bank
-  lastModified: 636858777461863283
+  lastModified: 636859235338249757
   LoadResult: 0
   FileSizes:
   - Name: Desktop
     Value: 672
+  Exists: 1
+--- !u!114 &114450387046473048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: D:\Files From Users\_WIP\2019-02-16 Gab&Cris BrackeysJam\GHC-jam\FMOD\Brackeys-jam\Build\Desktop\Master
+    Bank.bank
+  lastModified: 636859235338249757
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 12474
   Exists: 1
 --- !u!114 &114586374013919482
 MonoBehaviour:
@@ -57,4 +77,4 @@ MonoBehaviour:
   FileSizes:
   - Name: Desktop
     Value: 12474
-  Exists: 1
+  Exists: 0
