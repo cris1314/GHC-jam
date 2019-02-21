@@ -1954,6 +1954,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AloneList: []
+  CurrentConversations: []
 --- !u!1 &1095935483
 GameObject:
   m_ObjectHideFlags: 0
