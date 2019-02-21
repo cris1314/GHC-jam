@@ -93,7 +93,7 @@
     <object class="MixerBusPanner" id="{e5727ce6-17c8-41fc-8420-9a556f93c6fb}"/>
     <object class="SingleSound" id="{deef2f5f-310c-4ac7-b146-2fc91e1a8519}">
         <property name="length">
-            <value>1.2793650793650793</value>
+            <value>2.1499999999999999</value>
         </property>
         <relationship name="fadeOutCurve">
             <destination>{1eabcb2d-57a3-494d-b527-b80125c05c03}</destination>
@@ -104,7 +104,7 @@
     </object>
     <object class="EventMixerGroup" id="{e9649cbd-fd16-412e-b2cc-72cd4ec60135}">
         <property name="volume">
-            <value>-31</value>
+            <value>4.5</value>
         </property>
         <property name="name">
             <value>Glass Filling</value>
@@ -145,7 +145,7 @@
     <object class="SpatialiserEffect" id="{1343f299-e115-45a5-bc70-4962bb6e7ede}"/>
     <object class="AutomationPoint" id="{36c33616-ec72-4cb9-9a61-6c73151c0b7b}">
         <property name="position">
-            <value>0.60000000000000009</value>
+            <value>1.4706349206349207</value>
         </property>
         <property name="value">
             <value>1</value>
@@ -156,7 +156,7 @@
     </object>
     <object class="AutomationPoint" id="{5b9b51b9-5985-4433-ab48-b14edd7d3946}">
         <property name="position">
-            <value>1.2793650793650793</value>
+            <value>2.1499999999999999</value>
         </property>
         <property name="value">
             <value>0</value>
