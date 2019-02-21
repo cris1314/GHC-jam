@@ -5,13 +5,17 @@ public class CustomerController : MonoBehaviour {
 
     Camera cam;
     NavMeshAgent agent;
-
+    ConvoSystem convsys;
     bool isOnStool = false;
     Chair currentChair;
+    [HideInInspector]
+    public Collider characterCollider;
 	// Use this for initialization
 	void Start () {
         cam = FindObjectOfType<Camera>();
         agent = this.GetComponent<NavMeshAgent>();
+        convsys = this.GetComponent<ConvoSystem>();
+        characterCollider = this.GetComponent<CapsuleCollider>();
 	}
 	
 	// Update is called once per frame
@@ -50,7 +54,9 @@ public class CustomerController : MonoBehaviour {
                     agent.enabled = false;
                     transform.position = currentChair.PosB.position;
                     isOnStool = true;
-                    currentChair.Occupied();
+
+                    currentChair.Occupied(convsys);
+                    convsys.lookforConversation(currentChair);
                 }
                 break;
         }

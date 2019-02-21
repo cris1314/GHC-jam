@@ -4,7 +4,16 @@ using UnityEngine;
 using UnityEngine.UI;
 public class LevelManager : MonoBehaviour {
 
+    #region[instance]
+    public static LevelManager instance;
+    private void Awake()
+    {
+        instance = this;
+    }
+    #endregion
     [SerializeField]
+    [Range(0f, 5f)]
+    public int timeToStartWhenReady;
     [Header("Timer")]
     [Range(0f, 10f)]
     public int Minutes;
@@ -14,9 +23,11 @@ public class LevelManager : MonoBehaviour {
     [Header("Game References")]
     [Range(10f, 100f)]
     public int SpawnFullProbabilty = 50;
+    public BarMode BM;
     //float SpawnFullProbabilty;
     public List<GameObject> CustomerPrefabs = new List<GameObject>();
-    public List<Chair> emptyStools = new List<Chair>();
+    public List<Chair> Stools = new List<Chair>();
+   // public List<CharacterTemplate> characterTemplates = new List<CharacterTemplate>();
     [Space]
     [Header("UI References")]
     public Text timerTxt;
@@ -30,7 +41,7 @@ public class LevelManager : MonoBehaviour {
         //SpawnFullProbabilty = ()
         //Debug.Log("p" + (SpawnFullProbabilty / 100.0f));
         CallMoreCustomers();
-        StartTheGame();
+        //StartTheGame();
         //Timer
         timerTxt.text = Minutes.ToString("00") + ":" + Seconds.ToString("00"); //init the  timer text UI
     }
@@ -90,6 +101,37 @@ public class LevelManager : MonoBehaviour {
     /// </summary>
     public void StartTheGame() {
         StartCoroutine(StartCountdown(Seconds, Minutes)); // calls the timer coroutine
+        BM.FindMatchs();
+    }
+
+    //plus means right , false mean left
+    public bool CheckCharacterSide(int indexStool, bool plus) {
+
+        if (indexStool == 0 && !plus) { return false; }
+        if (indexStool == (Stools.Count - 1) && plus) { return false; }
+        int nextStool = indexStool + 1;
+        int prevStool = indexStool - 1;
+
+        if (plus){
+            if (Stools[nextStool].convosysAttached == null) { return false; } else {
+                return Stools[nextStool].convosysAttached.chara.isAvailable;
+            }
+        }else {
+            if (Stools[prevStool].convosysAttached == null) { return false; } else {
+                return Stools[prevStool].convosysAttached.chara.isAvailable;
+            }
+            
+        }
 
     }
+
+     
+
+    /*//instantiatea new conversation 
+    void StartNewConversation(ConvoSystem CharacterA, ConvoSystem CharacterB) {
+        CharacterA.chara.isAvailable = false;
+        CharacterB.chara.isAvailable = false;
+        CharacterA.OnFoundPartner(CharacterB);
+        CharacterB.OnFoundPartner(CharacterA);
+    }*/
 }

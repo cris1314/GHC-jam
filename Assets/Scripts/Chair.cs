@@ -7,6 +7,7 @@ public class Chair : MonoBehaviour {
     public Type type;
     public Transform PosA;
     public Transform PosB;
+    public ConvoSystem convosysAttached; 
    // public int timeToAvailable;
     //CustomerController currentCustomer;
     private bool isAvailable = true;
@@ -20,7 +21,8 @@ public class Chair : MonoBehaviour {
         
     }
 
-    public void Occupied() {
+    public void Occupied(ConvoSystem cvs) {
+        convosysAttached = cvs;
         isAvailable = false;
         PosA.GetComponent<SphereCollider>().enabled = false;
     }
