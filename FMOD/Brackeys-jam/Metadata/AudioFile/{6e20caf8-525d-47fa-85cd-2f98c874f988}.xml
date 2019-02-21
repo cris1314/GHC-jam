@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{6e20caf8-525d-47fa-85cd-2f98c874f988}">
+        <property name="assetPath">
+            <value>BrackeysJam_BarGame_SFX_VoxFemaleQ3.ogg</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>44.0999985</value>
+        </property>
+        <property name="channelCount">
+            <value>1</value>
+        </property>
+        <property name="length">
+            <value>1.773968253968254</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{cd4e8f8a-39cc-4a54-934e-965178f0e65a}</destination>
+        </relationship>
+    </object>
+</objects>
