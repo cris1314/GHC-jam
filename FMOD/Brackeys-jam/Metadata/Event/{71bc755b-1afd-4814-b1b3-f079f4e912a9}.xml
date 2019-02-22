@@ -95,11 +95,8 @@
         <property name="length">
             <value>12</value>
         </property>
-        <property name="randomized">
-            <value>false</value>
-        </property>
         <property name="playlistMode">
-            <value>1</value>
+            <value>0</value>
         </property>
         <relationship name="modulators">
             <destination>{0f46187b-5120-45f9-a6f1-9af8704862cb}</destination>

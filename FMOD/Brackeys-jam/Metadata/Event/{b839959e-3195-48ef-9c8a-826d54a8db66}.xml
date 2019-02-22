@@ -4,7 +4,6 @@
         <property name="name">
             <value>BarGame_SFX_Footsteps</value>
         </property>
-        <property name="note"/>
         <property name="outputFormat">
             <value>2</value>
         </property>
@@ -59,13 +58,7 @@
     </object>
     <object class="EventAutomatableProperties" id="{90bd4034-1a9a-4a53-a360-db0933e47afc}">
         <property name="maxVoices">
-            <value>6</value>
-        </property>
-        <property name="voiceStealing">
-            <value>4</value>
-        </property>
-        <property name="triggerCooldown">
-            <value>140</value>
+            <value>10</value>
         </property>
     </object>
     <object class="MarkerTrack" id="{f0947c3d-c43e-4780-947b-4d5c720302ca}"/>
@@ -136,7 +129,7 @@
     </object>
     <object class="EventMixerGroup" id="{fd481ea7-6735-4292-8a5b-ab7eb15f02ab}">
         <property name="volume">
-            <value>6.5</value>
+            <value>4</value>
         </property>
         <property name="name">
             <value>Footsteps</value>
