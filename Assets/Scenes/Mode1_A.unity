@@ -3369,7 +3369,7 @@ MonoBehaviour:
   Minutes: 3
   Seconds: 30
   cam: {fileID: 534669904}
-  SpawnFullProbabilty: 85
+  SpawnFullProbabilty: 100
   BM: {fileID: 1026386805}
   CustomerPrefabs:
   - {fileID: 1919467100621542, guid: 80df4de892a357a428fed200dee8ebfb, type: 2}
@@ -3420,7 +3420,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebe95b549e8a64b4d8febc3f69c96adb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minimunAcceptancetoMatch: 30
+  minimunAcceptancetoMatch: 2
   PointsTowin: 5
   currentPoints: 0
   ScoreBar: {fileID: 1869996853}
@@ -5487,165 +5487,40 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4559459012804862, guid: bc13cfd9712d4c44dacad05f5b7e26aa, type: 2}
+    - target: {fileID: 4151796456716138, guid: d376e38da00cd084aa8b31410ccb8d59, type: 2}
       propertyPath: m_LocalPosition.x
       value: 1.2602355
       objectReference: {fileID: 0}
-    - target: {fileID: 4559459012804862, guid: bc13cfd9712d4c44dacad05f5b7e26aa, type: 2}
+    - target: {fileID: 4151796456716138, guid: d376e38da00cd084aa8b31410ccb8d59, type: 2}
       propertyPath: m_LocalPosition.y
       value: 1.026
       objectReference: {fileID: 0}
-    - target: {fileID: 4559459012804862, guid: bc13cfd9712d4c44dacad05f5b7e26aa, type: 2}
+    - target: {fileID: 4151796456716138, guid: d376e38da00cd084aa8b31410ccb8d59, type: 2}
       propertyPath: m_LocalPosition.z
       value: -7.140558
       objectReference: {fileID: 0}
-    - target: {fileID: 4559459012804862, guid: bc13cfd9712d4c44dacad05f5b7e26aa, type: 2}
+    - target: {fileID: 4151796456716138, guid: d376e38da00cd084aa8b31410ccb8d59, type: 2}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4559459012804862, guid: bc13cfd9712d4c44dacad05f5b7e26aa, type: 2}
+    - target: {fileID: 4151796456716138, guid: d376e38da00cd084aa8b31410ccb8d59, type: 2}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4559459012804862, guid: bc13cfd9712d4c44dacad05f5b7e26aa, type: 2}
+    - target: {fileID: 4151796456716138, guid: d376e38da00cd084aa8b31410ccb8d59, type: 2}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4559459012804862, guid: bc13cfd9712d4c44dacad05f5b7e26aa, type: 2}
+    - target: {fileID: 4151796456716138, guid: d376e38da00cd084aa8b31410ccb8d59, type: 2}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4559459012804862, guid: bc13cfd9712d4c44dacad05f5b7e26aa, type: 2}
+    - target: {fileID: 4151796456716138, guid: d376e38da00cd084aa8b31410ccb8d59, type: 2}
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 195484841752092098, guid: bc13cfd9712d4c44dacad05f5b7e26aa,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114508407045930370, guid: bc13cfd9712d4c44dacad05f5b7e26aa,
-        type: 2}
-      propertyPath: skinColor.r
-      value: 0.8773585
-      objectReference: {fileID: 0}
-    - target: {fileID: 114508407045930370, guid: bc13cfd9712d4c44dacad05f5b7e26aa,
-        type: 2}
-      propertyPath: skinColor.g
-      value: 0.7533129
-      objectReference: {fileID: 0}
-    - target: {fileID: 114508407045930370, guid: bc13cfd9712d4c44dacad05f5b7e26aa,
-        type: 2}
-      propertyPath: skinColor.b
-      value: 0.6000801
-      objectReference: {fileID: 0}
-    - target: {fileID: 114508407045930370, guid: bc13cfd9712d4c44dacad05f5b7e26aa,
-        type: 2}
-      propertyPath: skinColor.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114508407045930370, guid: bc13cfd9712d4c44dacad05f5b7e26aa,
-        type: 2}
-      propertyPath: hairColor.r
-      value: 0.09411766
-      objectReference: {fileID: 0}
-    - target: {fileID: 114508407045930370, guid: bc13cfd9712d4c44dacad05f5b7e26aa,
-        type: 2}
-      propertyPath: hairColor.g
-      value: 0.098039225
-      objectReference: {fileID: 0}
-    - target: {fileID: 114508407045930370, guid: bc13cfd9712d4c44dacad05f5b7e26aa,
-        type: 2}
-      propertyPath: hairColor.b
-      value: 0.09411766
-      objectReference: {fileID: 0}
-    - target: {fileID: 114508407045930370, guid: bc13cfd9712d4c44dacad05f5b7e26aa,
-        type: 2}
-      propertyPath: hairColor.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114508407045930370, guid: bc13cfd9712d4c44dacad05f5b7e26aa,
-        type: 2}
-      propertyPath: clothingColor.r
-      value: 0.2924528
-      objectReference: {fileID: 0}
-    - target: {fileID: 114508407045930370, guid: bc13cfd9712d4c44dacad05f5b7e26aa,
-        type: 2}
-      propertyPath: clothingColor.g
-      value: 0.2924528
-      objectReference: {fileID: 0}
-    - target: {fileID: 114508407045930370, guid: bc13cfd9712d4c44dacad05f5b7e26aa,
-        type: 2}
-      propertyPath: clothingColor.b
-      value: 0.2924528
-      objectReference: {fileID: 0}
-    - target: {fileID: 114508407045930370, guid: bc13cfd9712d4c44dacad05f5b7e26aa,
-        type: 2}
-      propertyPath: clothingColor.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114508407045930370, guid: bc13cfd9712d4c44dacad05f5b7e26aa,
-        type: 2}
-      propertyPath: shoeColor.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114508407045930370, guid: bc13cfd9712d4c44dacad05f5b7e26aa,
-        type: 2}
-      propertyPath: drinkTimer
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114508407045930370, guid: bc13cfd9712d4c44dacad05f5b7e26aa,
-        type: 2}
-      propertyPath: chatTimer
-      value: 6.332938
-      objectReference: {fileID: 0}
-    - target: {fileID: 114508407045930370, guid: bc13cfd9712d4c44dacad05f5b7e26aa,
-        type: 2}
-      propertyPath: chatCycleOffset
-      value: 0.20811129
-      objectReference: {fileID: 0}
-    - target: {fileID: 114508407045930370, guid: bc13cfd9712d4c44dacad05f5b7e26aa,
-        type: 2}
-      propertyPath: hairStyle
-      value: 
-      objectReference: {fileID: 1808681180325570, guid: 60210cce28f6d0c40a4fb7cb26dd80bd,
-        type: 2}
-    - target: {fileID: 114508407045930370, guid: bc13cfd9712d4c44dacad05f5b7e26aa,
-        type: 2}
-      propertyPath: clothing
-      value: 
-      objectReference: {fileID: 2800000, guid: 084e3d7080ef1d14abe11d8634a2a010, type: 3}
-    - target: {fileID: 114508407045930370, guid: bc13cfd9712d4c44dacad05f5b7e26aa,
-        type: 2}
-      propertyPath: faceFeature
-      value: 
-      objectReference: {fileID: 2800000, guid: b14ed32db0908394a8d9c7e1551e3190, type: 3}
-    - target: {fileID: 114508407045930370, guid: bc13cfd9712d4c44dacad05f5b7e26aa,
-        type: 2}
-      propertyPath: shoeStyle
-      value: 
-      objectReference: {fileID: 2800000, guid: 73cff90b0ebd75d429fe173527689d5a, type: 3}
-    - target: {fileID: 114508407045930370, guid: bc13cfd9712d4c44dacad05f5b7e26aa,
-        type: 2}
-      propertyPath: shoeColor.r
-      value: 0.509434
-      objectReference: {fileID: 0}
-    - target: {fileID: 114508407045930370, guid: bc13cfd9712d4c44dacad05f5b7e26aa,
-        type: 2}
-      propertyPath: shoeColor.g
-      value: 0.509434
-      objectReference: {fileID: 0}
-    - target: {fileID: 114508407045930370, guid: bc13cfd9712d4c44dacad05f5b7e26aa,
-        type: 2}
-      propertyPath: shoeColor.b
-      value: 0.509434
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 114102332540435086, guid: bc13cfd9712d4c44dacad05f5b7e26aa, type: 2}
-    - {fileID: 114653220312433480, guid: bc13cfd9712d4c44dacad05f5b7e26aa, type: 2}
-    - {fileID: 114797067861138002, guid: bc13cfd9712d4c44dacad05f5b7e26aa, type: 2}
-    - {fileID: 114353599375344852, guid: bc13cfd9712d4c44dacad05f5b7e26aa, type: 2}
-  m_SourcePrefab: {fileID: 100100000, guid: bc13cfd9712d4c44dacad05f5b7e26aa, type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d376e38da00cd084aa8b31410ccb8d59, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1001 &1740841335
 Prefab:

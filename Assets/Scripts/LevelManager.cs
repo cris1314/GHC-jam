@@ -93,8 +93,8 @@ public class LevelManager : MonoBehaviour {
         #endregion
 
         //will find a random number between the 74% and 100% of the available stools
-        //int rnd = Random.Range((int)(availableStools.Count * (float)(SpawnFullProbabilty / 100.0f)), availableStools.Count);
-        int rnd = Random.Range(1, availableStools.Count);
+        int rnd = Random.Range((int)(availableStools.Count * (float)(SpawnFullProbabilty / 100.0f)), availableStools.Count);
+        //int rnd = Random.Range(1, availableStools.Count);
         //Debug.Log("Stools Available: " + availableStools.Count);
         //Debug.Log("Random number: " + rnd);
         /*Queue<GameObject> customersOutside = new Queue<GameObject>();

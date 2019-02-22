@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿/*using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -39,7 +39,7 @@ public class CharacterTemplate : MonoBehaviour {
 
 
 
-[System.Serializable]
+/*[System.Serializable]
 public class Likes
 {
     
@@ -51,4 +51,4 @@ public class Likes
     }
 
 
-}
+}*/

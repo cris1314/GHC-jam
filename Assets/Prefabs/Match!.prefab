@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212628382678774040}
   - component: {fileID: 95194334829482634}
   - component: {fileID: 114191220830137388}
+  - component: {fileID: 114765905613169220}
   m_Layer: 0
   m_Name: Match!
   m_TagString: Untagged
@@ -59,6 +60,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToDestroy: 2
+--- !u!114 &114765905613169220
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1971646851406642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: event:/SFX/BarGame_SFX_Happy
+  PlayEvent: 1
+  StopEvent: 0
+  CollisionTag: 
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!212 &212628382678774040
 SpriteRenderer:
   m_ObjectHideFlags: 1

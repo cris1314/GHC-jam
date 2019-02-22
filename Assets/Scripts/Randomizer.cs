@@ -89,6 +89,17 @@ public class Randomizer : MonoBehaviour
             ch.glasses = glassesPrefabs[g];
             ch.glassesColor = glassesColors[l];
             ch.preferedDrink = drinks[d];
+
+            foreach (Likes lk in ch.likes) {
+                int rndnum = Random.Range(0,2);
+                if (rndnum > 0)
+                {
+                    lk.like = true;
+                }else {
+                    lk.like = false;
+
+                }
+            }
             //---------
             Transform stoolPosition = stools.Dequeue().transform;
             newCustomer.GetComponent<CustomerController>().GoTo(stoolPosition);

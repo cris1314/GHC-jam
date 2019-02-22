@@ -5,8 +5,8 @@ using UnityEngine.UI;
 public class BarMode : MonoBehaviour {
 
 
-    [Range(10.0f, 100.0f)]
-    public int minimunAcceptancetoMatch = 50;
+    [Range(1.0f, 7f)]
+    public int minimunAcceptancetoMatch = 3;
 
     public int PointsTowin;
     public int currentPoints;

@@ -23,12 +23,14 @@ MonoBehaviour:
   - {fileID: 114952812768527944}
   - {fileID: 114658329631360384}
   - {fileID: 114941036100885896}
+  - {fileID: 114364088107154676}
+  - {fileID: 114944296090057182}
   MasterBanks:
   - {fileID: 114586374013919482}
   - {fileID: 114450387046473048}
   StringsBanks:
   - {fileID: 114013412804521040}
-  stringsBankWriteTime: 636863624487918514
+  stringsBankWriteTime: 636864486233396568
   cacheVersion: 3
 --- !u!114 &114013412804521040
 MonoBehaviour:
@@ -42,11 +44,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: FMOD\Brackeys-jam\Build\Desktop\Master Bank.strings.bank
-  lastModified: 636863624487918514
+  lastModified: 636864486233396568
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 1078
+    Value: 1150
   Exists: 1
 --- !u!114 &114086454565538918
 MonoBehaviour:
@@ -83,11 +85,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: C:\Users\Damian\Documents\Developer\GHC-jam\FMOD\Brackeys-jam\Build\Desktop\Master
     Bank.bank
-  lastModified: 636863624488528549
+  lastModified: 636864486233856594
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 2610208
+    Value: 2665824
   Exists: 1
 --- !u!114 &114264090195304594
 MonoBehaviour:
@@ -111,6 +113,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 12000
+--- !u!114 &114364088107154676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/BarGame_SFX__Sad
+  guid: 08b936652f8e1f4ab962b6613cba229e
+  Banks:
+  - {fileID: 114217863570453440}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1829
 --- !u!114 &114450387046473048
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -259,6 +283,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 276
+--- !u!114 &114944296090057182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/BarGame_SFX_Happy
+  guid: c282624a7c672f46a03ceea40efa4ecc
+  Banks:
+  - {fileID: 114217863570453440}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 857
 --- !u!114 &114952812768527944
 MonoBehaviour:
   m_ObjectHideFlags: 0
