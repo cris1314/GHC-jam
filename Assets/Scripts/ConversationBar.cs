@@ -80,7 +80,10 @@ public class ConversationBar : MonoBehaviour {
             yield return new WaitForSeconds(1);
             chA.GiveOpinion(chB.likes.IndexOf(chBLikes[idB]));
 
-            yield return new WaitForSeconds(chatTimerA);
+           
+
+
+        yield return new WaitForSeconds(chatTimerA);
             StartCoroutine(Conversation());
        /* }
         else {
