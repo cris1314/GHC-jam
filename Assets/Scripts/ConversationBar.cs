@@ -12,6 +12,9 @@ public class ConversationBar : MonoBehaviour {
     public GameObject positiveMatchFeedback;
     public GameObject negativeMatchFeedback;
     public Light SelectionLight;
+    public Transform cameraNewPos;
+    public Transform cameraNewLookAt;
+    bool canSelect = false;
     //Animator positiveFeedback;
     //Animator negativeFeedback;
     
@@ -25,14 +28,16 @@ public class ConversationBar : MonoBehaviour {
     public  void SetConversationBar(ConvoSystem a, ConvoSystem b) {
         CharacterA = a;
         CharacterB = b;
-
+        canSelect = true;
         
         //turn = Random.Range(0,1);
         //StartCoroutine(Conversation());
     }
 
     public void SelectConversation() {
+        if (!canSelect) { return; }
         //Debug.Log("Selected " + this.name);
+        LevelManager.instance.cam.GetComponent<CameraController>().MoveToPoint(cameraNewPos.position,cameraNewLookAt);
         LevelManager.instance.turnLights(false);
         turnLight();
         LevelManager.instance.BM.RequestSelection(this);
@@ -100,11 +105,22 @@ public class ConversationBar : MonoBehaviour {
 
         CharacterA.chara.isAvailable = false;
         CharacterB.chara.isAvailable = false;
+        if (result)
+        {
+            CharacterA.gameObject.GetComponent<CustomerController>().GoAway();
+            CharacterB.gameObject.GetComponent<CustomerController>().GoAway();
+            
+        }
+        else {
+            CharacterA.gameObject.GetComponent<CustomerController>().KeepLooking();
+            CharacterB.gameObject.GetComponent<CustomerController>().KeepLooking();
+           
 
-        CharacterA.gameObject.GetComponent<CustomerController>().GoAway();
-        CharacterB.gameObject.GetComponent<CustomerController>().GoAway();
+        }
+        canSelect = false;
         this.GetComponent<BoxCollider>().enabled = false;
         Invoke("Unable", 2.0f);
+
     }
 
     void Unable() {

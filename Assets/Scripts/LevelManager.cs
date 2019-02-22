@@ -19,6 +19,11 @@ public class LevelManager : MonoBehaviour {
     public int minTimeForNextWave;
     [Range(5f, 20f)]
     public int maxTimeForNextWave;
+
+    [Range(5f, 20f)]
+    public int minPascienceTime;
+    [Range(5f, 20f)]
+    public int maxPascienceTime;
     [Header("Timer")]
     [Range(0f, 10f)]
     public int Minutes;
@@ -34,6 +39,9 @@ public class LevelManager : MonoBehaviour {
     public List<GameObject> CustomerPrefabs = new List<GameObject>();
     public List<Chair> Stools = new List<Chair>();
     public List<Light> Lamps = new List<Light>();
+
+    public FMODUnity.StudioEventEmitter JukeBoxSFX;
+    
     // public List<CharacterTemplate> characterTemplates = new List<CharacterTemplate>();
     public Transform Exit;
     [Space]
@@ -74,6 +82,8 @@ public class LevelManager : MonoBehaviour {
         List<Chair> availableStools = new List<Chair>();
         foreach (Chair ch in FindObjectsOfType<Chair>()) {
             if (ch.type == Chair.Type.Stool && ch.IsAvailable) {
+                //Debug.Log("Available!");
+             
                 availableStools.Add(ch);
             }
         }
@@ -83,7 +93,8 @@ public class LevelManager : MonoBehaviour {
         #endregion
 
         //will find a random number between the 74% and 100% of the available stools
-        int rnd = Random.Range((int)(availableStools.Count * (float)(SpawnFullProbabilty / 100.0f)), availableStools.Count);
+        //int rnd = Random.Range((int)(availableStools.Count * (float)(SpawnFullProbabilty / 100.0f)), availableStools.Count);
+        int rnd = Random.Range(1, availableStools.Count);
         //Debug.Log("Stools Available: " + availableStools.Count);
         //Debug.Log("Random number: " + rnd);
         /*Queue<GameObject> customersOutside = new Queue<GameObject>();
@@ -99,6 +110,10 @@ public class LevelManager : MonoBehaviour {
     //Timer coroutine that takes place every second
     public IEnumerator StartCountdown(int ISeconds, int IMinutes)
     {
+        JukeBoxSFX.Play();
+        yield return new WaitForSeconds(1);
+        cam.GetComponent<FMODUnity.StudioEventEmitter>().Play();
+
         currCountdownSeconds = ISeconds; //temp variable to store the given seconds
         currCountdownMinutes = Minutes;  //temp variable to store the given minutes
         //int i = 0;

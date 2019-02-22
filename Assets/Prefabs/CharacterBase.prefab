@@ -61,6 +61,7 @@ GameObject:
   - component: {fileID: 114353599375344852}
   - component: {fileID: 114102332540435086}
   - component: {fileID: 114797067861138002}
+  - component: {fileID: 114653220312433480}
   m_Layer: 10
   m_Name: CharacterBase
   m_TagString: Untagged
@@ -806,40 +807,40 @@ MonoBehaviour:
   anim: {fileID: 95848736293626364}
   opinion: {fileID: 0}
   positiveReact:
-  - {fileID: 21300000, guid: 591cd3f12c3be144f91943ac734b0243, type: 3}
-  - {fileID: 21300000, guid: 74bdbcfa618a16c489ad807ad4b02a46, type: 3}
-  - {fileID: 21300000, guid: cef604515269a79479c0953308a6951b, type: 3}
-  - {fileID: 21300000, guid: e5f46a63501c1334cb0859568c17c3af, type: 3}
-  - {fileID: 21300000, guid: 0f7d96160f3285445a96f290c403d462, type: 3}
-  - {fileID: 21300000, guid: d5f5931631afd264cb7e707fcc2cb23f, type: 3}
-  - {fileID: 21300000, guid: 6a6e048176ff11a44bfcdb89c044e5ae, type: 3}
-  - {fileID: 21300000, guid: d90d313ceb2095b41bf37a6231fa1841, type: 3}
-  - {fileID: 21300000, guid: d70753ea86c6f8246a3de74928c33bcb, type: 3}
-  - {fileID: 21300000, guid: 912ab20bac5840340ab3f096a4022bd4, type: 3}
-  - {fileID: 21300000, guid: a4de42d6da208c640886af85d7121c42, type: 3}
-  - {fileID: 21300000, guid: cc023ca43364da149b5d268b4142dabd, type: 3}
-  - {fileID: 21300000, guid: dfb00378c3f147e478500378fa6ef89a, type: 3}
-  - {fileID: 21300000, guid: c9e8b4d7bc7bd624a9367cf8b6f443ac, type: 3}
-  - {fileID: 21300000, guid: 3df89be04aa39e341a7d0d16792af662, type: 3}
-  - {fileID: 21300000, guid: 9ff9e0e769b8c4f47ab206a3aa39f47f, type: 3}
+  - {fileID: 21300000, guid: c7066380c8f6ef148b797259049af23b, type: 3}
+  - {fileID: 21300000, guid: 8aec2b3fc75157f428a93e982bc96ab6, type: 3}
+  - {fileID: 21300000, guid: 5d8945d4b54b3db4b809842523792466, type: 3}
+  - {fileID: 21300000, guid: fa000d8ebf36d7f429d155384bf956b4, type: 3}
+  - {fileID: 21300000, guid: 551af864767af894b89b0e057dba030d, type: 3}
+  - {fileID: 21300000, guid: daa29ca45433dbb4da31143bd72dae5a, type: 3}
+  - {fileID: 21300000, guid: c9edcf013fd44fe4fb8944c4ba4ea41d, type: 3}
+  - {fileID: 21300000, guid: f198efea4ca1bb14c862e14480f2d6c1, type: 3}
+  - {fileID: 21300000, guid: e0cad260f5a0c1d4ca30136fafc8879c, type: 3}
+  - {fileID: 21300000, guid: 1454920f969602b48869cdc778d274c8, type: 3}
+  - {fileID: 21300000, guid: 7355e5f7a3ec1dd42b0ce58e9daa1fd6, type: 3}
+  - {fileID: 21300000, guid: 92c4cb1891889414886f4d0ff313934b, type: 3}
+  - {fileID: 21300000, guid: d5ddf48b359b36e46be995e66195c32c, type: 3}
+  - {fileID: 21300000, guid: 8c49fa3696d4e1146a0da8202ecf014a, type: 3}
+  - {fileID: 21300000, guid: 3fefd95e73143254ea451d8b23ae68c1, type: 3}
+  - {fileID: 21300000, guid: 62de50c80ec69ec44882e2c91b2ba619, type: 3}
   negativeReact:
-  - {fileID: 21300000, guid: 62bc0085d7ca0d94fa7ea77f1a3ceddd, type: 3}
-  - {fileID: 21300000, guid: 88f0ef386431adc4bbfa162b49943faf, type: 3}
-  - {fileID: 21300000, guid: 026548390ad0a584d978ed2c3a230585, type: 3}
-  - {fileID: 21300000, guid: 695978cb8fec75b4f83a7eb474e2ef70, type: 3}
-  - {fileID: 21300000, guid: 0712bac94c4ad3643909fca0c418ee15, type: 3}
-  - {fileID: 21300000, guid: 5a66d9b9780acaa48ab59482f4ce9ed7, type: 3}
-  - {fileID: 21300000, guid: c784a4a9a35d3244ea1c79b046f21ab7, type: 3}
-  - {fileID: 21300000, guid: ca49198fda4a4f444bf3533e37d69027, type: 3}
-  - {fileID: 21300000, guid: ab8e3e88fa9109144a612f40913d174c, type: 3}
-  - {fileID: 21300000, guid: f7b7e73796a1b36429d999300a06f072, type: 3}
-  - {fileID: 21300000, guid: a3f8f644c4c4be44c976cf8671e1e340, type: 3}
-  - {fileID: 21300000, guid: d94c5d76a8d5ef34890efc7348dce801, type: 3}
-  - {fileID: 21300000, guid: 8e7bdcef3ab89c34cb29d9c7af7bd609, type: 3}
-  - {fileID: 21300000, guid: 2e3d821e8500c1b439259d21327a37cb, type: 3}
-  - {fileID: 21300000, guid: c9fb4b160a638ff46a0a75294a2e74c8, type: 3}
-  - {fileID: 21300000, guid: acc2c1b28b1846b47a5998bdae17ae8e, type: 3}
-  - {fileID: 21300000, guid: b56dfa233179493439cc607a029bc819, type: 3}
+  - {fileID: 21300000, guid: 8229820cb4bc3904e9a742f45990845b, type: 3}
+  - {fileID: 21300000, guid: 97bd902b254cb034489debcd32f23bde, type: 3}
+  - {fileID: 21300000, guid: f05ba49b26168974d92cd50a75da67c5, type: 3}
+  - {fileID: 21300000, guid: b0beca8e6cb6aa94f9e233890783ac3c, type: 3}
+  - {fileID: 21300000, guid: 3db0ddeb3a3c0054089b32fc3ba6dc79, type: 3}
+  - {fileID: 21300000, guid: 18ed5e7c81cf38d44b96cf224f1793d3, type: 3}
+  - {fileID: 21300000, guid: 56c37209fe77efb439b3af2192c6ee6a, type: 3}
+  - {fileID: 21300000, guid: 902b64f63567eae40b79910d59af108f, type: 3}
+  - {fileID: 21300000, guid: 81a5d8c9a28354f499867aaa67ccb3bb, type: 3}
+  - {fileID: 21300000, guid: 792c33e7e08647f4990651bed9909bc9, type: 3}
+  - {fileID: 21300000, guid: bf9af55c31fb1314b8e9410af2e99860, type: 3}
+  - {fileID: 21300000, guid: 112a0b6a5a6fda44880b45d4613fa644, type: 3}
+  - {fileID: 21300000, guid: 438afbff7ef85a242ab72977652df15b, type: 3}
+  - {fileID: 21300000, guid: 51c3a4f299dc25144b60887ae12addb3, type: 3}
+  - {fileID: 21300000, guid: 9bfd9bae3a95c7b40983c12b6a50ea13, type: 3}
+  - {fileID: 21300000, guid: 6377c586059d371408102d93cb00c0e9, type: 3}
+  - {fileID: 21300000, guid: ea3c550d4bb441140b0d91d3a7b69636, type: 3}
   isAvailable: 1
   isSitting: 0
   isWalking: 0
@@ -850,6 +851,31 @@ MonoBehaviour:
   chatCycleOffset: 0
   opinionLifetime: 3
   opinionRate: {x: 6, y: 8}
+  Goods: 0
+  Bads: 0
+  canTalk: 1
+--- !u!114 &114653220312433480
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1168348825083464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: event:/SFX/BarGame_SFX_Vox
+  PlayEvent: 0
+  StopEvent: 0
+  CollisionTag: 
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!114 &114797067861138002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -862,7 +888,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chara: {fileID: 0}
-  partner: {fileID: 0}
+  pascienceTime: 0
+  partners: []
   currentStool: {fileID: 0}
 --- !u!136 &136065397592525900
 CapsuleCollider:

@@ -2,12 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ConvoSystem : MonoBehaviour{
+public class ConvoSystem : MonoBehaviour {
 
     [HideInInspector]
     public Character chara;
-    //[HideInInspector]
+
+    [HideInInspector]
+    public int pascienceTime;
     //public ConvoSystem partner;
+    [HideInInspector]
+    public List<ConvoSystem> partners = new List<ConvoSystem>();
     public Chair currentStool;
     
     // public CustomerController cusctrl;
@@ -27,7 +31,7 @@ public class ConvoSystem : MonoBehaviour{
     }
 
     public void OnFoundPartner(ConvoSystem p) {
-        //partner = p;
+        partners.Add(p);
         transform.LookAt(p.transform);
         chara.isAvailable = false;
     }

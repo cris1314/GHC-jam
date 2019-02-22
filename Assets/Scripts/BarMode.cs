@@ -15,10 +15,18 @@ public class BarMode : MonoBehaviour {
     public List<ConvoSystem> AloneList = new List<ConvoSystem>();
     public List<ConversationBar> CurrentConversations = new List<ConversationBar>();
     public GameObject inviteAdrinkPanel;
-
+    private FMODUnity.StudioEventEmitter eventEmitterRef;
+    public FMODUnity.StudioEventEmitter yesSFX;
+    public FMODUnity.StudioEventEmitter noSFX;
     [HideInInspector]
     public int selectedConversation;
     [HideInInspector]
+
+    private void Awake()
+    {
+        eventEmitterRef = GetComponent<FMODUnity.StudioEventEmitter>();
+    }
+
     public bool OnSelection = false;
 
     public void WaitingList(ConvoSystem cs) {
@@ -30,6 +38,7 @@ public class BarMode : MonoBehaviour {
     public void FindMatchs() {
         Debug.Log(AloneList.Count);
         Debug.Log("Finding Match...");
+        eventEmitterRef.Play();
         Queue<ConvoSystem> WaitingCustomers = new Queue<ConvoSystem>();
         int possibleindex;
         int timesForLoop = AloneList.Count;
@@ -75,13 +84,21 @@ public class BarMode : MonoBehaviour {
 
                 if (left)
                 {
-                   // Debug.Log("left Sides" + currentCS.name);
-                    StartNewConversation(currentCS, LevelManager.instance.Stools[stoolIndex - 1].convosysAttached);
+                    // Debug.Log("left Sides" + currentCS.name);
+                    ConvoSystem matchPartner = LevelManager.instance.Stools[stoolIndex - 1].convosysAttached;
+                    if (!currentCS.partners.Contains(matchPartner)) {
+                        StartNewConversation(currentCS, LevelManager.instance.Stools[stoolIndex - 1].convosysAttached);
+                    }
                 }
                 else if (right)
                 {
                     //Debug.Log("right Sides" + currentCS.name);
-                    StartNewConversation(currentCS, LevelManager.instance.Stools[stoolIndex + 1].convosysAttached);
+                    ConvoSystem matchPartner = LevelManager.instance.Stools[stoolIndex + 1].convosysAttached;
+                    if (!currentCS.partners.Contains(matchPartner))
+                    {
+                        StartNewConversation(currentCS, LevelManager.instance.Stools[stoolIndex + 1].convosysAttached);
+
+                    }
                 }
 
             }
@@ -119,12 +136,14 @@ public class BarMode : MonoBehaviour {
 
 
     public void InviteADrink() {
+        yesSFX.Play();
         inviteAdrinkPanel.SetActive(false);
         CurrentConversations[selectedConversation].SelectionLight.enabled = false;
         LevelManager.instance.turnLights(true);
         StartCoroutine(CurrentConversations[selectedConversation].DetermineMatch());
         //selectedConversation = null;
         OnSelection = false;
+        LevelManager.instance.cam.GetComponent<CameraController>().RestorePosition();
         //selectedConversation = 0;
     }
 
@@ -132,10 +151,13 @@ public class BarMode : MonoBehaviour {
 
     public void DontInviteADrink()
     {
+        noSFX.Play();
         inviteAdrinkPanel.SetActive(false);
         CurrentConversations[selectedConversation].SelectionLight.enabled = false;
         LevelManager.instance.turnLights(true);
         OnSelection = false;
+        LevelManager.instance.cam.GetComponent<CameraController>().RestorePosition();
+
     }
 
     public void AddPoints() {

@@ -8,7 +8,7 @@
 [WRN] SystemI::init                            : Output requires a sample rate of 44100Hz, resampling will occur.
 [LOG] Thread::initThread                       : Init FMOD stream thread. Priority: 2, Stack Size: 65536, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Priority: 3, Stack Size: 49152, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 000000002E21D568 isAsync 0 updatePeriod 0.02
+[LOG] AsyncManager::init                       : manager 00000000438DDE68 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Priority: 0, Stack Size: 65536, Semaphore: No, Sleep Time: 1, Looping: No.
@@ -16,12 +16,54 @@
 [LOG] Thread::initThread                       : Init FMOD Studio bank load thread. Priority: 0, Stack Size: 65536, Semaphore: No, Sleep Time: 1, Looping: No.
 [LOG] Manager::init                            : done.
 [LOG] Manager::readBank                        : fileversion = 103, compatVersion = 99 (oldest = 44, newest = 103)
-[LOG] Manager::readBank                        : fileversion = 103, compatVersion = 99 (oldest = 44, newest = 103)
-[LOG] Manager::readBank                        : fileversion = 103, compatVersion = 99 (oldest = 44, newest = 103)
-[LOG] Manager::readBank                        : fileversion = 103, compatVersion = 99 (oldest = 44, newest = 103)
-[LOG] Manager::readBank                        : fileversion = 103, compatVersion = 99 (oldest = 44, newest = 103)
-[LOG] Manager::readBank                        : fileversion = 103, compatVersion = 99 (oldest = 44, newest = 103)
 [LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
+[ERR] FMOD_OS_File_Open                        : CreateFileW failed, GetLastError = 21 (name = D:\Files From Users\_WIP\2019-02-16 Gab&Cris BrackeysJam\GHC-jam\FMOD\Brackeys-jam\Build\Desktop\Master Bank.bank)
+[ERR] RuntimeBankModel::openFile               : Failed to open file 'D:\Files From Users\_WIP\2019-02-16 Gab&Cris BrackeysJam\GHC-jam\FMOD\Brackeys-jam\Build\Desktop\Master Bank.bank'
+[LOG] Manager::readBank                        : fileversion = 103, compatVersion = 99 (oldest = 44, newest = 103)
+[LOG] Manager::finishLoadBank                  : Bank with guid {a3fa4e91-a87a-4f03-a93d-4a450a806d30} has already been loaded
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 232
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 2579616
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 30592
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0000000041C7F5FC
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 000007FEDA510D70
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 000007FEDA510D40
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 000007FEDA510E40
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 000007FEDA510F00
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000000437F68D8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='BrackeysJam_BarGame_SFX_JukeBoxButton01', format=2, channels=1, frequency=48000, lengthbytes=3488, lengthpcm=16142, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.197205.
+[LOG] SoundI::release                          :  (0000000012DFC988)
+[LOG] SoundI::release                          :     BrackeysJam_BarGame_SFX_JukeBoxButton01 (00000000437CB4A8)
+[LOG] Manager::readBank                        : fileversion = 103, compatVersion = 99 (oldest = 44, newest = 103)
+[ERR] assert                                   : assertion: 'mMasterBus == nullptr' failed
+[LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
+[ERR] FMOD_OS_File_Open                        : CreateFileW failed, GetLastError = 21 (name = D:\Files From Users\_WIP\2019-02-16 Gab&Cris BrackeysJam\GHC-jam\FMOD\Brackeys-jam\Build\Desktop\Master Bank.bank)
+[ERR] RuntimeBankModel::openFile               : Failed to open file 'D:\Files From Users\_WIP\2019-02-16 Gab&Cris BrackeysJam\GHC-jam\FMOD\Brackeys-jam\Build\Desktop\Master Bank.bank'
+[LOG] Manager::readBank                        : fileversion = 103, compatVersion = 99 (oldest = 44, newest = 103)
+[LOG] Manager::finishLoadBank                  : Bank with guid {a3fa4e91-a87a-4f03-a93d-4a450a806d30} has already been loaded
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 232
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 2579616
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 30592
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0000000041C7F5FC
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 000007FEDA510D70
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 000007FEDA510D40
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 000007FEDA510E40
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 000007FEDA510F00
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000000437F68D8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='BrackeysJam_BarGame_SFX_JukeBoxButton01', format=2, channels=1, frequency=48000, lengthbytes=3488, lengthpcm=16142, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.197205.
+[LOG] SoundI::release                          :  (0000000012DFC988)
+[LOG] SoundI::release                          :     BrackeysJam_BarGame_SFX_JukeBoxButton01 (00000000437CB4A8)
 [LOG] Thread::callback                         : FMOD Studio bank load thread finished.
 [LOG] Thread::callback                         : FMOD Studio sample load thread finished.
 [LOG] LiveUpdate::release                      : 

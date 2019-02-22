@@ -25,14 +25,20 @@ public class Randomizer : MonoBehaviour
     public int maxTimeToSpawn = 1;
     int spawnCount;
     int CustomersQuantity;
+
+    private FMODUnity.StudioEventEmitter eventEmitterRef;
+
     private void Awake()
     {
         instance = this;
+        eventEmitterRef = GetComponent<FMODUnity.StudioEventEmitter>();
+
     }
 
     //Spawn New customers
     public IEnumerator Spawn(int NewCustomersInComing, List<Chair> availableStools)
     {
+        eventEmitterRef.Play();
         CustomersQuantity = NewCustomersInComing;
         Queue<Chair> stools = new Queue<Chair>();
         List<int> usedChairs = new List<int>();
@@ -49,6 +55,7 @@ public class Randomizer : MonoBehaviour
             stools.Enqueue(availableStools[possibleindex]);
         }
         yield return new WaitForEndOfFrame();
+        
         while (CustomersQuantity > 0)
         {
 
@@ -86,7 +93,8 @@ public class Randomizer : MonoBehaviour
             Transform stoolPosition = stools.Dequeue().transform;
             newCustomer.GetComponent<CustomerController>().GoTo(stoolPosition);
             //CharacterTemplate template = LevelManager.instance.characterTemplates[Random.Range(0, maxNumberOfTemplates)];
-            //newCustomer.GetComponent<ConvoSystem>().chara = new Character(template);
+            newCustomer.GetComponent<ConvoSystem>().pascienceTime = Random.Range(LevelManager.instance.minPascienceTime,
+                LevelManager.instance.maxPascienceTime);
             newCustomer.name = CustomersQuantity.ToString();
             CustomersQuantity--;
             yield return new WaitForSeconds(Random.Range(1, maxTimeToSpawn));

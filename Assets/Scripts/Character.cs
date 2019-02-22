@@ -45,11 +45,19 @@ public class Character : MonoBehaviour
     public int opinionLifetime;
     public Vector2 opinionRate;
 
+    private FMODUnity.StudioEventEmitter eventEmitterRef;
+
     public int Goods;
     public int Bads;
     [HideInInspector]
     public bool canTalk = true;
     // Start is called before the first frame update
+
+    private void Awake()
+    {
+        eventEmitterRef = GetComponent<FMODUnity.StudioEventEmitter>();
+    }
+
     void Start()
     {
         if (hairStyle != null)
@@ -149,7 +157,7 @@ public class Character : MonoBehaviour
             opinion.sprite = negativeReact[n];
             Bads++;
         }
-
+        eventEmitterRef.Play();
         Destroy(op, opinionLifetime);
     }
 
