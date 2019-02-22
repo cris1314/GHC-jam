@@ -1,11 +1,26 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class BarMode : MonoBehaviour {
-    
+
+
+    [Range(10.0f, 100.0f)]
+    public int minimunAcceptancetoMatch = 50;
+
+    public int PointsTowin;
+    public int currentPoints;
+
+    public Slider ScoreBar;
     public List<ConvoSystem> AloneList = new List<ConvoSystem>();
     public List<ConversationBar> CurrentConversations = new List<ConversationBar>();
+    public GameObject inviteAdrinkPanel;
+
+    [HideInInspector]
+    public int selectedConversation;
+    [HideInInspector]
+    public bool OnSelection = false;
+
     public void WaitingList(ConvoSystem cs) {
         AloneList.Add(cs);
 
@@ -70,25 +85,76 @@ public class BarMode : MonoBehaviour {
                 }
 
             }
-            else {
-                //Debug.Log("not available" + currentCS.name);
-            }
 
         }
     }
 
     void StartNewConversation(ConvoSystem CharacterA, ConvoSystem CharacterB)
     {
-       
+      
         AloneList.Remove(CharacterA);
         AloneList.Remove(CharacterB);
-        CharacterA.chara.isAvailable = false;
-        CharacterB.chara.isAvailable = false;
+        int idA = LevelManager.instance.Stools.IndexOf(CharacterA.currentStool);
+        int idB = LevelManager.instance.Stools.IndexOf(CharacterB.currentStool);
 
-
-
-        //CharacterA.OnFoundPartner(CharacterB);
-        //CharacterB.OnFoundPartner(CharacterA);
+        ConversationBar CB;
+        if (idA < idB) {
+            CB = CurrentConversations[idA];
+        } else {
+            CB = CurrentConversations[idB];
+        }
+        CB.gameObject.SetActive(true);
+        CB.SetConversationBar(CharacterA,CharacterB);
+        CharacterA.OnFoundPartner(CharacterB);
+        CharacterB.OnFoundPartner(CharacterA);
+        
     }
 
+    public void RequestSelection(ConversationBar cbtemp)
+    {
+        selectedConversation = CurrentConversations.IndexOf(cbtemp);
+        inviteAdrinkPanel.SetActive(true);
+        OnSelection = true;
+    }
+
+
+    public void InviteADrink() {
+        inviteAdrinkPanel.SetActive(false);
+        CurrentConversations[selectedConversation].SelectionLight.enabled = false;
+        LevelManager.instance.turnLights(true);
+        StartCoroutine(CurrentConversations[selectedConversation].DetermineMatch());
+        //selectedConversation = null;
+        OnSelection = false;
+        //selectedConversation = 0;
+    }
+
+    
+
+    public void DontInviteADrink()
+    {
+        inviteAdrinkPanel.SetActive(false);
+        CurrentConversations[selectedConversation].SelectionLight.enabled = false;
+        LevelManager.instance.turnLights(true);
+        OnSelection = false;
+    }
+
+    public void AddPoints() {
+        currentPoints++;
+        calculateProgressBar();
+        if (currentPoints >= PointsTowin) {
+            LevelManager.instance.GameWon();
+        }
+    }
+
+    public void RestPoints() {
+        if (currentPoints > 0) {
+            currentPoints--;
+            calculateProgressBar();
+        }
+    }
+
+    void calculateProgressBar() {
+        float barValue = ((currentPoints * 100) / (PointsTowin)) / 100.0f;
+        ScoreBar.value = barValue;
+    }
 }

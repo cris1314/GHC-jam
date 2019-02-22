@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 public class LevelManager : MonoBehaviour {
 
     #region[instance]
@@ -14,6 +15,10 @@ public class LevelManager : MonoBehaviour {
     [SerializeField]
     [Range(0f, 5f)]
     public int timeToStartWhenReady;
+    [Range(5f, 20f)]
+    public int minTimeForNextWave;
+    [Range(5f, 20f)]
+    public int maxTimeForNextWave;
     [Header("Timer")]
     [Range(0f, 10f)]
     public int Minutes;
@@ -21,29 +26,47 @@ public class LevelManager : MonoBehaviour {
     public int Seconds;
     [Space]
     [Header("Game References")]
+    public Camera cam;
     [Range(10f, 100f)]
     public int SpawnFullProbabilty = 50;
     public BarMode BM;
     //float SpawnFullProbabilty;
     public List<GameObject> CustomerPrefabs = new List<GameObject>();
     public List<Chair> Stools = new List<Chair>();
-   // public List<CharacterTemplate> characterTemplates = new List<CharacterTemplate>();
+    public List<Light> Lamps = new List<Light>();
+    // public List<CharacterTemplate> characterTemplates = new List<CharacterTemplate>();
+    public Transform Exit;
     [Space]
     [Header("UI References")]
     public Text timerTxt;
-    
 
+    bool gamehasstarted = false;
     int currCountdownSeconds;
     int currCountdownMinutes;
 
     private void Start()
     {
-        //SpawnFullProbabilty = ()
-        //Debug.Log("p" + (SpawnFullProbabilty / 100.0f));
+        
         CallMoreCustomers();
-        //StartTheGame();
-        //Timer
+        
         timerTxt.text = Minutes.ToString("00") + ":" + Seconds.ToString("00"); //init the  timer text UI
+    }
+
+    private void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            RaycastHit hit;
+            Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+            if (Physics.Raycast(ray, out hit))
+            {
+                if (hit.transform.gameObject.tag == "ConversationSelect" && !BM.OnSelection)
+                {
+                    hit.transform.gameObject.GetComponent<ConversationBar>().SelectConversation();
+                }
+                //Debug.Log("You selected the " + hit.transform.name); // ensure you picked right object
+            }
+        }
     }
 
     void CallMoreCustomers() {
@@ -63,14 +86,14 @@ public class LevelManager : MonoBehaviour {
         int rnd = Random.Range((int)(availableStools.Count * (float)(SpawnFullProbabilty / 100.0f)), availableStools.Count);
         //Debug.Log("Stools Available: " + availableStools.Count);
         //Debug.Log("Random number: " + rnd);
-        Queue<GameObject> customersOutside = new Queue<GameObject>();
+        /*Queue<GameObject> customersOutside = new Queue<GameObject>();
         for (int i = 0; i < rnd; i++)
         {
             customersOutside.Enqueue(CustomerPrefabs[Random.Range(0,CustomerPrefabs.Count - 1)]);
-        }
+        }*/
         //Debug.Log("There are " + customersOutside.Count + "customer outside!");
         //spawn customer at the start of the level
-        StartCoroutine(CustomerSpawner.instance.Spawn(customersOutside,availableStools));
+        StartCoroutine(Randomizer.instance.Spawn(rnd,availableStools));
     }
 
     //Timer coroutine that takes place every second
@@ -96,11 +119,23 @@ public class LevelManager : MonoBehaviour {
         Debug.Log("Time out");
     }
 
+    IEnumerator Waves() {
+        yield return new WaitForSeconds(Random.Range(minTimeForNextWave,maxTimeForNextWave));
+        CallMoreCustomers();
+        StartCoroutine(Waves());
+    }
+
     /// <summary>
     /// Call this function when the game is ready to start
     /// </summary>
     public void StartTheGame() {
-        StartCoroutine(StartCountdown(Seconds, Minutes)); // calls the timer coroutine
+        if (!gamehasstarted)
+        {
+            gamehasstarted = true;
+            StartCoroutine(StartCountdown(Seconds, Minutes)); // calls the timer coroutine
+            StartCoroutine(Waves());
+        }
+        
         BM.FindMatchs();
     }
 
@@ -125,13 +160,19 @@ public class LevelManager : MonoBehaviour {
 
     }
 
-     
+    public void turnLights(bool OnOff)
+    {
+        foreach (Light l in Lamps) {
+            l.enabled = OnOff;
+        }
 
-    /*//instantiatea new conversation 
-    void StartNewConversation(ConvoSystem CharacterA, ConvoSystem CharacterB) {
-        CharacterA.chara.isAvailable = false;
-        CharacterB.chara.isAvailable = false;
-        CharacterA.OnFoundPartner(CharacterB);
-        CharacterB.OnFoundPartner(CharacterA);
-    }*/
+    }
+
+
+    public void GameWon() {
+        SceneManager.LoadScene(0);
+
+    }
+
+
 }

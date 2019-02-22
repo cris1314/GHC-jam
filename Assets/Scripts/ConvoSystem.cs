@@ -5,14 +5,15 @@ using UnityEngine;
 public class ConvoSystem : MonoBehaviour{
 
     [HideInInspector]
-    public CharacterTemplate chara;
-    [HideInInspector]
-    public ConvoSystem partner;
+    public Character chara;
+    //[HideInInspector]
+    //public ConvoSystem partner;
     public Chair currentStool;
+    
     // public CustomerController cusctrl;
     private void Start()
     {
-        chara = GetComponent<CharacterTemplate>();
+        chara = GetComponent<Character>();
     }
     //public int TimeToLookAgain;
 
@@ -26,8 +27,9 @@ public class ConvoSystem : MonoBehaviour{
     }
 
     public void OnFoundPartner(ConvoSystem p) {
-        partner = p;
-        Debug.Log(this.name + ": my partner is " + partner.name);
+        //partner = p;
+        transform.LookAt(p.transform);
+        chara.isAvailable = false;
     }
 
 

@@ -45,6 +45,10 @@ public class Character : MonoBehaviour
     public int opinionLifetime;
     public Vector2 opinionRate;
 
+    public int Goods;
+    public int Bads;
+    [HideInInspector]
+    public bool canTalk = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -57,6 +61,7 @@ public class Character : MonoBehaviour
         if (glasses != null)
         {
             GameObject glss = Instantiate(glasses, head, false);
+            glasses.transform.position = new Vector3(-0.1f, 0, 0.6f);
             glss.GetComponentInChildren<MeshRenderer>().material.SetColor("_Color", glassesColor);
         }
 
@@ -76,7 +81,7 @@ public class Character : MonoBehaviour
 
         drink.material.mainTexture = preferedDrink;
         drinkTimer = Random.Range(1, 3);
-        chatTimer = Random.Range(opinionRate.x, opinionRate.y);
+        chatTimer = Random.Range(opinionRate.x, opinionRate.y); //SOMETHING HERE THAT MAY CHANGE
 
         chatCycleOffset = Random.Range(0f, 1f);
         anim.speed = Random.Range(0.5f, 2f);
@@ -89,7 +94,7 @@ public class Character : MonoBehaviour
         anim.SetBool("isAvailable", isAvailable);
         anim.SetBool("isSitting", isSitting);
         anim.SetBool("isWalking", isWalking);
-
+        
         if (isSitting)
         {
             if (isAvailable)
@@ -126,6 +131,7 @@ public class Character : MonoBehaviour
 
     void GiveOpinion()
     {
+        //if (!canTalk) { return; }
         GameObject op = Instantiate(opinionPrefab, head.transform.position, Quaternion.identity);
         opinion = op.GetComponentsInChildren<SpriteRenderer>()[1];
 
@@ -135,11 +141,13 @@ public class Character : MonoBehaviour
         {
             int p = Random.Range(0, positiveReact.Length);
             opinion.sprite = positiveReact[p];
+            Goods++;
         }
         else
         {
             int n = Random.Range(0, positiveReact.Length);
             opinion.sprite = negativeReact[n];
+            Bads++;
         }
 
         Destroy(op, opinionLifetime);
